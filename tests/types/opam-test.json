@@ -1,0 +1,507 @@
+{
+  "$schema": "https://packageurl.org/schemas/purl-test.schema-0.1.json",
+  "tests": [
+    {
+      "description": "valid opam purl. Roundtrip an input purl to canonical.",
+      "test_group": "advanced",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "valid opam purl",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "opam.ocaml.org",
+        "name": "ocaml-base-compiler",
+        "version": "5.2.0",
+        "qualifiers": {
+          "repo_url": "https://opam.ocaml.org"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "valid opam purl. Roundtrip a canonical input to canonical output.",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "valid opam purl",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": "opam.ocaml.org",
+        "name": "ocaml-base-compiler",
+        "version": "5.2.0",
+        "qualifiers": {
+          "repo_url": "https://opam.ocaml.org"
+        },
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "name is required",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": null,
+      "expected_failure": true,
+      "expected_failure_reason": "Should fail to parse a PURL from invalid purl input"
+    },
+    {
+      "description": "name is required in canonical form",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": null,
+      "expected_failure": true,
+      "expected_failure_reason": "Should fail to parse a PURL from invalid canonical purl input"
+    },
+    {
+      "description": "name is required to build",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": "opam.ocaml.org",
+        "name": null,
+        "version": "5.2.0",
+        "qualifiers": {
+          "repo_url": "https://opam.ocaml.org"
+        },
+        "subpath": null
+      },
+      "expected_output": null,
+      "expected_failure": true,
+      "expected_failure_reason": "Should fail to build a PURL from invalid input components"
+    },
+    {
+      "description": "Parse test for PURL type: opam",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/opam.ocaml.org/git@3.16.1?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "opam.ocaml.org",
+        "name": "git",
+        "version": "3.16.1",
+        "qualifiers": {
+          "repo_url": "https://opam.ocaml.org"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "Roundtrip test for PURL type: opam",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/opam.ocaml.org/git@3.16.1?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/git@3.16.1?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "Build test for PURL type: opam",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": "opam.ocaml.org",
+        "name": "git",
+        "version": "3.16.1",
+        "qualifiers": {
+          "repo_url": "https://opam.ocaml.org"
+        },
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/opam.ocaml.org/git@3.16.1?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl with alternate repository namespace",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/tezos-opam-repository/git@3.16.1?repo_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "tezos-opam-repository",
+        "name": "git",
+        "version": "3.16.1",
+        "qualifiers": {
+          "repo_url": "git+https://github.com/tezos/opam-repository.git"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl with alternate repository namespace",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/tezos-opam-repository/git@3.16.1?repo_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
+      "expected_output": "pkg:opam/tezos-opam-repository/git@3.16.1?repo_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "build opam purl with alternate repository namespace",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": "oxcaml-opam-repository",
+        "name": "git",
+        "version": "3.16.1",
+        "qualifiers": {
+          "repo_url": "git+ssh://github.com/oxcaml/opam-repository.git"
+        },
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/oxcaml-opam-repository/git@3.16.1?repo_url=git%2Bssh%3A%2F%2Fgithub.com%2Foxcaml%2Fopam-repository.git",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl referencing a darcs repository",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repo_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "darcs-example-opam-repo",
+        "name": "merlin",
+        "version": "4.13",
+        "qualifiers": {
+          "repo_url": "darcs+ssh://darcs.example.org/opam-repo"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl referencing a darcs repository",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repo_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
+      "expected_output": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repo_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl referencing an hg repository",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/hg-example-opam/ocamlformat@0.26?repo_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "hg-example-opam",
+        "name": "ocamlformat",
+        "version": "0.26",
+        "qualifiers": {
+          "repo_url": "hg+https://hg.example.org/opam"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl referencing an hg repository",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/hg-example-opam/ocamlformat@0.26?repo_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
+      "expected_output": "pkg:opam/hg-example-opam/ocamlformat@0.26?repo_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl referencing a local repository",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repo_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "local-home-user-opam-repo",
+        "name": "dune",
+        "version": "3.16.0",
+        "qualifiers": {
+          "repo_url": "file:///home/user/src/opam-repo"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl referencing a local repository",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repo_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
+      "expected_output": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repo_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "valid opam purl without a version",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/opam.ocaml.org/dune?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "opam.ocaml.org",
+        "name": "dune",
+        "version": null,
+        "qualifiers": {
+          "repo_url": "https://opam.ocaml.org"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "Roundtrip canonicalization for lowercase type with namespace and qualifier",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:OPAM/OPAM.OCAML.ORG/dune?REPO_URL=HTTPS%3A%2F%2FOPAM.OCAML.ORG",
+      "expected_output": "pkg:opam/opam.ocaml.org/dune?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl with plus sign in package name (conf-g++)",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/conf-g%2B%2B@1.0",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "conf-g++",
+        "version": "1.0",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl with plus sign in package name (conf-g++)",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/conf-g%2B%2B@1.0",
+      "expected_output": "pkg:opam/conf-g%2B%2B@1.0",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "build opam purl with plus sign in package name (conf-c++)",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": null,
+        "name": "conf-c++",
+        "version": "1.0",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/conf-c%2B%2B@1.0",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl with tilde in version (prerelease 1.0~beta)",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/mypackage@1.0~beta",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "mypackage",
+        "version": "1.0~beta",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl with tilde in version (prerelease)",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/mypackage@1.0~rc1",
+      "expected_output": "pkg:opam/mypackage@1.0~rc1",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "build opam purl with tilde in version",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": null,
+        "name": "mypackage",
+        "version": "2.0~alpha",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/mypackage@2.0~alpha",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl with underscore in package name",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/ocaml_intrinsics@0.16.0",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "ocaml_intrinsics",
+        "version": "0.16.0",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl with underscore in package name",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/ocaml_intrinsics@0.16.0",
+      "expected_output": "pkg:opam/ocaml_intrinsics@0.16.0",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl preserving case-sensitive name (uppercase letters)",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/Camlp4@4.14",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "Camlp4",
+        "version": "4.14",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl preserving case-sensitive name",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/CamlIDL@1.10",
+      "expected_output": "pkg:opam/CamlIDL@1.10",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "build opam purl with case-sensitive name",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": null,
+        "name": "ANSITerminal",
+        "version": "0.8.5",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/ANSITerminal@0.8.5",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse minimal opam purl (name only, no namespace, no version, no qualifiers)",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/dune",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "dune",
+        "version": null,
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip minimal opam purl",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/lwt",
+      "expected_output": "pkg:opam/lwt",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "build minimal opam purl",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": null,
+        "name": "core",
+        "version": null,
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/core",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl with complex version (multiple dots and dash)",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/zarith@1.13-1",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "zarith",
+        "version": "1.13-1",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl with dev version",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/ppxlib@dev",
+      "expected_output": "pkg:opam/ppxlib@dev",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    }
+  ]
+}
