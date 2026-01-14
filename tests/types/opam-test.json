@@ -502,6 +502,133 @@
       "expected_output": "pkg:opam/ppxlib@dev",
       "expected_failure": false,
       "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl pinned to git URL with commit hash",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/lwt@5.7.0?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Focsigen%2Flwt.git%40abc123def456",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "lwt",
+        "version": "5.7.0",
+        "qualifiers": {
+          "vcs_url": "git+https://github.com/ocsigen/lwt.git@abc123def456"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl pinned to git URL with commit hash",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/lwt@5.7.0?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Focsigen%2Flwt.git%40abc123def456",
+      "expected_output": "pkg:opam/lwt@5.7.0?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Focsigen%2Flwt.git%40abc123def456",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "build opam purl pinned to git URL with commit hash",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": null,
+        "name": "dune",
+        "version": "3.16.0",
+        "qualifiers": {
+          "vcs_url": "git+https://github.com/ocaml/dune.git@9a8b7c6d5e4f"
+        },
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/dune@3.16.0?vcs_url=git%2Bhttps%3A%2F%2Fgithub.com%2Focaml%2Fdune.git%409a8b7c6d5e4f",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl pinned to local path",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/mylib@dev?vcs_url=file%3A%2F%2F%2Fhome%2Fuser%2Fprojects%2Fmylib",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "mylib",
+        "version": "dev",
+        "qualifiers": {
+          "vcs_url": "file:///home/user/projects/mylib"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl pinned to local path",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/mylib@dev?vcs_url=file%3A%2F%2F%2Fhome%2Fuser%2Fprojects%2Fmylib",
+      "expected_output": "pkg:opam/mylib@dev?vcs_url=file%3A%2F%2F%2Fhome%2Fuser%2Fprojects%2Fmylib",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl pinned to git+ssh URL",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/core@v0.16.0?vcs_url=git%2Bssh%3A%2F%2Fgit%40github.com%2Fjanestreet%2Fcore.git%40v0.16.0",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "core",
+        "version": "v0.16.0",
+        "qualifiers": {
+          "vcs_url": "git+ssh://git@github.com/janestreet/core.git@v0.16.0"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl pinned to git+ssh URL",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/core@v0.16.0?vcs_url=git%2Bssh%3A%2F%2Fgit%40github.com%2Fjanestreet%2Fcore.git%40v0.16.0",
+      "expected_output": "pkg:opam/core@v0.16.0?vcs_url=git%2Bssh%3A%2F%2Fgit%40github.com%2Fjanestreet%2Fcore.git%40v0.16.0",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl with both repo_url and vcs_url (pinned from specific repo)",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/tezos-opam-repository/tezos-base@dev?repo_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "tezos-opam-repository",
+        "name": "tezos-base",
+        "version": "dev",
+        "qualifiers": {
+          "repo_url": "git+https://gitlab.com/tezos/opam-repository.git",
+          "vcs_url": "git+https://gitlab.com/tezos/tezos.git@abc123"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl with both repo_url and vcs_url",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/tezos-opam-repository/tezos-base@dev?repo_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
+      "expected_output": "pkg:opam/tezos-opam-repository/tezos-base@dev?repo_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
+      "expected_failure": false,
+      "expected_failure_reason": null
     }
   ]
 }
