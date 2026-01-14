@@ -5,8 +5,8 @@
       "description": "valid opam purl. Roundtrip an input purl to canonical.",
       "test_group": "advanced",
       "test_type": "roundtrip",
-      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
-      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repository_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -14,14 +14,14 @@
       "description": "valid opam purl",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_output": {
         "type": "opam",
         "namespace": "opam.ocaml.org",
         "name": "ocaml-base-compiler",
         "version": "5.2.0",
         "qualifiers": {
-          "repo_url": "https://opam.ocaml.org"
+          "repository_url": "https://opam.ocaml.org"
         },
         "subpath": null
       },
@@ -32,8 +32,8 @@
       "description": "valid opam purl. Roundtrip a canonical input to canonical output.",
       "test_group": "base",
       "test_type": "roundtrip",
-      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
-      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "input": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repository_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -47,11 +47,11 @@
         "name": "ocaml-base-compiler",
         "version": "5.2.0",
         "qualifiers": {
-          "repo_url": "https://opam.ocaml.org"
+          "repository_url": "https://opam.ocaml.org"
         },
         "subpath": null
       },
-      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/ocaml-base-compiler@5.2.0?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -59,7 +59,7 @@
       "description": "name is required",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "input": "pkg:opam?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_output": null,
       "expected_failure": true,
       "expected_failure_reason": "Should fail to parse a PURL from invalid purl input"
@@ -68,7 +68,7 @@
       "description": "name is required in canonical form",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "input": "pkg:opam?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_output": null,
       "expected_failure": true,
       "expected_failure_reason": "Should fail to parse a PURL from invalid canonical purl input"
@@ -83,7 +83,7 @@
         "name": null,
         "version": "5.2.0",
         "qualifiers": {
-          "repo_url": "https://opam.ocaml.org"
+          "repository_url": "https://opam.ocaml.org"
         },
         "subpath": null
       },
@@ -95,14 +95,14 @@
       "description": "Parse test for PURL type: opam",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam/opam.ocaml.org/git@3.16.1?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "input": "pkg:opam/opam.ocaml.org/git@3.16.1?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_output": {
         "type": "opam",
         "namespace": "opam.ocaml.org",
         "name": "git",
         "version": "3.16.1",
         "qualifiers": {
-          "repo_url": "https://opam.ocaml.org"
+          "repository_url": "https://opam.ocaml.org"
         },
         "subpath": null
       },
@@ -113,8 +113,8 @@
       "description": "Roundtrip test for PURL type: opam",
       "test_group": "base",
       "test_type": "roundtrip",
-      "input": "pkg:opam/opam.ocaml.org/git@3.16.1?repo_url=https%3A%2F%2Fopam.ocaml.org",
-      "expected_output": "pkg:opam/opam.ocaml.org/git@3.16.1?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "input": "pkg:opam/opam.ocaml.org/git@3.16.1?repository_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/git@3.16.1?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -128,11 +128,11 @@
         "name": "git",
         "version": "3.16.1",
         "qualifiers": {
-          "repo_url": "https://opam.ocaml.org"
+          "repository_url": "https://opam.ocaml.org"
         },
         "subpath": null
       },
-      "expected_output": "pkg:opam/opam.ocaml.org/git@3.16.1?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/git@3.16.1?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -140,14 +140,14 @@
       "description": "parse opam purl with alternate repository namespace",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam/tezos-opam-repository/git@3.16.1?repo_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
+      "input": "pkg:opam/tezos-opam-repository/git@3.16.1?repository_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
       "expected_output": {
         "type": "opam",
         "namespace": "tezos-opam-repository",
         "name": "git",
         "version": "3.16.1",
         "qualifiers": {
-          "repo_url": "git+https://github.com/tezos/opam-repository.git"
+          "repository_url": "git+https://github.com/tezos/opam-repository.git"
         },
         "subpath": null
       },
@@ -158,8 +158,8 @@
       "description": "roundtrip opam purl with alternate repository namespace",
       "test_group": "base",
       "test_type": "roundtrip",
-      "input": "pkg:opam/tezos-opam-repository/git@3.16.1?repo_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
-      "expected_output": "pkg:opam/tezos-opam-repository/git@3.16.1?repo_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
+      "input": "pkg:opam/tezos-opam-repository/git@3.16.1?repository_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
+      "expected_output": "pkg:opam/tezos-opam-repository/git@3.16.1?repository_url=git%2Bhttps%3A%2F%2Fgithub.com%2Ftezos%2Fopam-repository.git",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -173,11 +173,11 @@
         "name": "git",
         "version": "3.16.1",
         "qualifiers": {
-          "repo_url": "git+ssh://github.com/oxcaml/opam-repository.git"
+          "repository_url": "git+ssh://github.com/oxcaml/opam-repository.git"
         },
         "subpath": null
       },
-      "expected_output": "pkg:opam/oxcaml-opam-repository/git@3.16.1?repo_url=git%2Bssh%3A%2F%2Fgithub.com%2Foxcaml%2Fopam-repository.git",
+      "expected_output": "pkg:opam/oxcaml-opam-repository/git@3.16.1?repository_url=git%2Bssh%3A%2F%2Fgithub.com%2Foxcaml%2Fopam-repository.git",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -185,14 +185,14 @@
       "description": "parse opam purl referencing a darcs repository",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repo_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
+      "input": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repository_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
       "expected_output": {
         "type": "opam",
         "namespace": "darcs-example-opam-repo",
         "name": "merlin",
         "version": "4.13",
         "qualifiers": {
-          "repo_url": "darcs+ssh://darcs.example.org/opam-repo"
+          "repository_url": "darcs+ssh://darcs.example.org/opam-repo"
         },
         "subpath": null
       },
@@ -203,8 +203,8 @@
       "description": "roundtrip opam purl referencing a darcs repository",
       "test_group": "base",
       "test_type": "roundtrip",
-      "input": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repo_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
-      "expected_output": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repo_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
+      "input": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repository_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
+      "expected_output": "pkg:opam/darcs-example-opam-repo/merlin@4.13?repository_url=darcs%2Bssh%3A%2F%2Fdarcs.example.org%2Fopam-repo",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -212,14 +212,14 @@
       "description": "parse opam purl referencing an hg repository",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam/hg-example-opam/ocamlformat@0.26?repo_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
+      "input": "pkg:opam/hg-example-opam/ocamlformat@0.26?repository_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
       "expected_output": {
         "type": "opam",
         "namespace": "hg-example-opam",
         "name": "ocamlformat",
         "version": "0.26",
         "qualifiers": {
-          "repo_url": "hg+https://hg.example.org/opam"
+          "repository_url": "hg+https://hg.example.org/opam"
         },
         "subpath": null
       },
@@ -230,8 +230,8 @@
       "description": "roundtrip opam purl referencing an hg repository",
       "test_group": "base",
       "test_type": "roundtrip",
-      "input": "pkg:opam/hg-example-opam/ocamlformat@0.26?repo_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
-      "expected_output": "pkg:opam/hg-example-opam/ocamlformat@0.26?repo_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
+      "input": "pkg:opam/hg-example-opam/ocamlformat@0.26?repository_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
+      "expected_output": "pkg:opam/hg-example-opam/ocamlformat@0.26?repository_url=hg%2Bhttps%3A%2F%2Fhg.example.org%2Fopam",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -239,14 +239,14 @@
       "description": "parse opam purl referencing a local repository",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repo_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
+      "input": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repository_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
       "expected_output": {
         "type": "opam",
         "namespace": "local-home-user-opam-repo",
         "name": "dune",
         "version": "3.16.0",
         "qualifiers": {
-          "repo_url": "file:///home/user/src/opam-repo"
+          "repository_url": "file:///home/user/src/opam-repo"
         },
         "subpath": null
       },
@@ -257,8 +257,8 @@
       "description": "roundtrip opam purl referencing a local repository",
       "test_group": "base",
       "test_type": "roundtrip",
-      "input": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repo_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
-      "expected_output": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repo_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
+      "input": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repository_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
+      "expected_output": "pkg:opam/local-home-user-opam-repo/dune@3.16.0?repository_url=file%3A%2F%2F%2Fhome%2Fuser%2Fsrc%2Fopam-repo",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -266,14 +266,14 @@
       "description": "valid opam purl without a version",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam/opam.ocaml.org/dune?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "input": "pkg:opam/opam.ocaml.org/dune?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_output": {
         "type": "opam",
         "namespace": "opam.ocaml.org",
         "name": "dune",
         "version": null,
         "qualifiers": {
-          "repo_url": "https://opam.ocaml.org"
+          "repository_url": "https://opam.ocaml.org"
         },
         "subpath": null
       },
@@ -285,7 +285,7 @@
       "test_group": "base",
       "test_type": "roundtrip",
       "input": "pkg:OPAM/OPAM.OCAML.ORG/dune?REPO_URL=HTTPS%3A%2F%2FOPAM.OCAML.ORG",
-      "expected_output": "pkg:opam/opam.ocaml.org/dune?repo_url=https%3A%2F%2Fopam.ocaml.org",
+      "expected_output": "pkg:opam/opam.ocaml.org/dune?repository_url=https%3A%2F%2Fopam.ocaml.org",
       "expected_failure": false,
       "expected_failure_reason": null
     },
@@ -603,17 +603,17 @@
       "expected_failure_reason": null
     },
     {
-      "description": "parse opam purl with both repo_url and vcs_url (pinned from specific repo)",
+      "description": "parse opam purl with both repository_url and vcs_url (pinned from specific repo)",
       "test_group": "base",
       "test_type": "parse",
-      "input": "pkg:opam/tezos-opam-repository/tezos-base@dev?repo_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
+      "input": "pkg:opam/tezos-opam-repository/tezos-base@dev?repository_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
       "expected_output": {
         "type": "opam",
         "namespace": "tezos-opam-repository",
         "name": "tezos-base",
         "version": "dev",
         "qualifiers": {
-          "repo_url": "git+https://gitlab.com/tezos/opam-repository.git",
+          "repository_url": "git+https://gitlab.com/tezos/opam-repository.git",
           "vcs_url": "git+https://gitlab.com/tezos/tezos.git@abc123"
         },
         "subpath": null
@@ -622,11 +622,11 @@
       "expected_failure_reason": null
     },
     {
-      "description": "roundtrip opam purl with both repo_url and vcs_url",
+      "description": "roundtrip opam purl with both repository_url and vcs_url",
       "test_group": "base",
       "test_type": "roundtrip",
-      "input": "pkg:opam/tezos-opam-repository/tezos-base@dev?repo_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
-      "expected_output": "pkg:opam/tezos-opam-repository/tezos-base@dev?repo_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
+      "input": "pkg:opam/tezos-opam-repository/tezos-base@dev?repository_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
+      "expected_output": "pkg:opam/tezos-opam-repository/tezos-base@dev?repository_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
       "expected_failure": false,
       "expected_failure_reason": null
     }
