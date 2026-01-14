@@ -629,6 +629,130 @@
       "expected_output": "pkg:opam/tezos-opam-repository/tezos-base@dev?repository_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Fopam-repository.git&vcs_url=git%2Bhttps%3A%2F%2Fgitlab.com%2Ftezos%2Ftezos.git%40abc123",
       "expected_failure": false,
       "expected_failure_reason": null
+    },
+    {
+      "description": "parse Coq package from main opam repository",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/coq@8.18.0",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "coq",
+        "version": "8.18.0",
+        "qualifiers": null,
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip Coq package from main opam repository",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/coq@8.18.0",
+      "expected_output": "pkg:opam/coq@8.18.0",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse Coq package from Rocq released repository",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/coq-mathcomp-algebra@2.0.0?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Freleased",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "coq-mathcomp-algebra",
+        "version": "2.0.0",
+        "qualifiers": {
+          "repository_url": "https://rocq-prover.org/opam/released"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip Coq package from Rocq released repository",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/coq-mathcomp-algebra@2.0.0?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Freleased",
+      "expected_output": "pkg:opam/coq-mathcomp-algebra@2.0.0?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Freleased",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "build Coq package from Rocq released repository",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": null,
+        "name": "coq-mathcomp-algebra",
+        "version": "2.0.0",
+        "qualifiers": {
+          "repository_url": "https://rocq-prover.org/opam/released"
+        },
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/coq-mathcomp-algebra@2.0.0?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Freleased",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse Coq package with rocq-released namespace",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/rocq-released/coq-iris@4.0.0?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Freleased",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "rocq-released",
+        "name": "coq-iris",
+        "version": "4.0.0",
+        "qualifiers": {
+          "repository_url": "https://rocq-prover.org/opam/released"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip Coq package with rocq-released namespace",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/rocq-released/coq-iris@4.0.0?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Freleased",
+      "expected_output": "pkg:opam/rocq-released/coq-iris@4.0.0?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Freleased",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "parse Coq development package from extra-dev repository",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/rocq-extra-dev/coq-mathcomp-algebra@dev?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Fextra-dev",
+      "expected_output": {
+        "type": "opam",
+        "namespace": "rocq-extra-dev",
+        "name": "coq-mathcomp-algebra",
+        "version": "dev",
+        "qualifiers": {
+          "repository_url": "https://rocq-prover.org/opam/extra-dev"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip Coq development package from extra-dev repository",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/rocq-extra-dev/coq-mathcomp-algebra@dev?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Fextra-dev",
+      "expected_output": "pkg:opam/rocq-extra-dev/coq-mathcomp-algebra@dev?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Fextra-dev",
+      "expected_failure": false,
+      "expected_failure_reason": null
     }
   ]
 }
