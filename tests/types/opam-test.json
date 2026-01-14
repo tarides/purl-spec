@@ -753,6 +753,51 @@
       "expected_output": "pkg:opam/rocq-extra-dev/coq-mathcomp-algebra@dev?repository_url=https%3A%2F%2Frocq-prover.org%2Fopam%2Fextra-dev",
       "expected_failure": false,
       "expected_failure_reason": null
+    },
+    {
+      "description": "parse opam purl with pinned repository commit",
+      "test_group": "base",
+      "test_type": "parse",
+      "input": "pkg:opam/dune@3.16.0?repository_url=git%2Bhttps%3A%2F%2Fgithub.com%2Focaml%2Fopam-repository%23584630e7a7e27e3cf56158696a3fe94623a0cf4f",
+      "expected_output": {
+        "type": "opam",
+        "namespace": null,
+        "name": "dune",
+        "version": "3.16.0",
+        "qualifiers": {
+          "repository_url": "git+https://github.com/ocaml/opam-repository#584630e7a7e27e3cf56158696a3fe94623a0cf4f"
+        },
+        "subpath": null
+      },
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "roundtrip opam purl with pinned repository commit",
+      "test_group": "base",
+      "test_type": "roundtrip",
+      "input": "pkg:opam/dune@3.16.0?repository_url=git%2Bhttps%3A%2F%2Fgithub.com%2Focaml%2Fopam-repository%23584630e7a7e27e3cf56158696a3fe94623a0cf4f",
+      "expected_output": "pkg:opam/dune@3.16.0?repository_url=git%2Bhttps%3A%2F%2Fgithub.com%2Focaml%2Fopam-repository%23584630e7a7e27e3cf56158696a3fe94623a0cf4f",
+      "expected_failure": false,
+      "expected_failure_reason": null
+    },
+    {
+      "description": "build opam purl with pinned repository commit",
+      "test_group": "base",
+      "test_type": "build",
+      "input": {
+        "type": "opam",
+        "namespace": null,
+        "name": "lwt",
+        "version": "5.7.0",
+        "qualifiers": {
+          "repository_url": "git+https://github.com/ocaml/opam-repository#abc123def456"
+        },
+        "subpath": null
+      },
+      "expected_output": "pkg:opam/lwt@5.7.0?repository_url=git%2Bhttps%3A%2F%2Fgithub.com%2Focaml%2Fopam-repository%23abc123def456",
+      "expected_failure": false,
+      "expected_failure_reason": null
     }
   ]
 }
